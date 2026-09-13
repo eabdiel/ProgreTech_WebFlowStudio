@@ -1,6 +1,6 @@
 # ALM WebFlow Studio — Google Cloud Run baseline
 
-Standalone/personal branch, independent of SAP BTP and the ALM Engineering Hub.
+Standalone - 
 
 ## Included
 - Latest Hybrid Runtime v5 authoring/execution UI and fixes.
