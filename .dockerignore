@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.git/
+.idea/
+.vscode/
+.env
+data/runs/
+data/recordings/screenshots/
+data/performance/
+data/batches/
+*.zip

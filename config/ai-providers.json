@@ -1,0 +1,86 @@
+{
+  "schema": "webflow-ai-provider-registry/1",
+  "default_provider": "local",
+  "providers": [
+    {
+      "id": "local",
+      "name": "WebFlow Deterministic Bridge",
+      "adapter": "local-deterministic",
+      "enabled": true,
+      "description": "No-network fallback used for local development and provider-independent testing.",
+      "supports": ["text", "intent-fallback"]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI / GPT",
+      "adapter": "openai-responses",
+      "enabled": true,
+      "model": "gpt-5-mini",
+      "secret_env": "WEBFLOW_OPENAI_API_KEY",
+      "base_url_env": "WEBFLOW_OPENAI_RESPONSES_URL",
+      "credential_source": "environment-or-btp-secret",
+      "description": "Responses-style adapter. Credentials are read only from runtime environment/bindings.",
+      "supports": ["text", "json-intent"]
+    },
+    {
+      "id": "claude",
+      "name": "Anthropic / Claude",
+      "adapter": "anthropic-messages",
+      "enabled": true,
+      "model": "claude-sonnet-4-5",
+      "secret_env": "WEBFLOW_ANTHROPIC_API_KEY",
+      "base_url_env": "WEBFLOW_ANTHROPIC_MESSAGES_URL",
+      "credential_source": "environment-or-btp-secret",
+      "description": "Messages-style adapter for Claude-family models.",
+      "supports": ["text", "json-intent"]
+    },
+    {
+      "id": "openai-compatible",
+      "name": "OpenAI-Compatible Gateway",
+      "adapter": "openai-compatible-chat",
+      "enabled": true,
+      "model": "default",
+      "secret_env": "WEBFLOW_COMPAT_API_KEY",
+      "base_url_env": "WEBFLOW_COMPAT_CHAT_URL",
+      "credential_source": "environment-or-btp-secret",
+      "description": "Generic chat/completions adapter for internal gateways or compatible providers.",
+      "supports": ["text", "json-intent"]
+    },
+    {
+      "id": "joule",
+      "name": "SAP Joule Gateway",
+      "adapter": "generic-enterprise-json",
+      "enabled": true,
+      "secret_env": "WEBFLOW_JOULE_TOKEN",
+      "base_url_env": "WEBFLOW_JOULE_AGENT_URL",
+      "credential_source": "environment-or-btp-secret",
+      "response_text_path": "text",
+      "description": "Enterprise adapter placeholder. Point it at the approved Joule/API Management facade when available.",
+      "supports": ["text", "json-intent"]
+    },
+    {
+      "id": "copilot",
+      "name": "Microsoft Copilot / Engenie Gateway",
+      "adapter": "generic-enterprise-json",
+      "enabled": true,
+      "secret_env": "WEBFLOW_COPILOT_TOKEN",
+      "base_url_env": "WEBFLOW_COPILOT_AGENT_URL",
+      "credential_source": "environment-or-btp-secret",
+      "response_text_path": "text",
+      "description": "Enterprise adapter placeholder for the authenticated Copilot/Engenie service boundary.",
+      "supports": ["text", "json-intent"]
+    },
+    {
+      "id": "1minai",
+      "name": "1minAI Gateway",
+      "adapter": "generic-enterprise-json",
+      "enabled": true,
+      "secret_env": "WEBFLOW_1MINAI_API_KEY",
+      "base_url_env": "WEBFLOW_1MINAI_AGENT_URL",
+      "credential_source": "environment-or-btp-secret",
+      "response_text_path": "text",
+      "description": "Configurable REST adapter for an approved 1minAI endpoint or enterprise proxy.",
+      "supports": ["text", "json-intent"]
+    }
+  ]
+}

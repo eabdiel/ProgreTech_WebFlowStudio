@@ -1,0 +1,44 @@
+{
+  "schema_version": "webflow-governance/1",
+  "enforce_roles": true,
+  "enforce_domain_allowlist": false,
+  "allowed_domains": [
+    "*.arthrex.com",
+    "localhost",
+    "127.0.0.1"
+  ],
+  "require_destructive_confirmation": true,
+  "destructive_keywords": [
+    "approve",
+    "submit",
+    "sign",
+    "delete",
+    "remove",
+    "post",
+    "publish",
+    "release",
+    "create user",
+    "provision"
+  ],
+  "block_destructive_performance_tests": true,
+  "limits": {
+    "max_upload_mb": 25,
+    "max_timeout_ms": 120000,
+    "max_retries": 3,
+    "max_performance_runs": 100,
+    "max_performance_concurrency": 4,
+    "max_queue_workers": 4
+  },
+  "retention": {
+    "audit_days": 90,
+    "run_artifact_days": 30,
+    "performance_days": 30,
+    "batch_days": 30
+  },
+  "pilot": {
+    "require_persistent_storage_in_cloud": true,
+    "require_playwright": true,
+    "require_domain_allowlist_in_cloud": true,
+    "require_xsuaa_roles_in_cloud": true
+  }
+}

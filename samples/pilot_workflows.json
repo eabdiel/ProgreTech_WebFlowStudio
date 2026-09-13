@@ -1,0 +1,9 @@
+{
+  "schema_version": "webflow-pilot-workflows/1",
+  "workflows": [
+    {"name": "Read-only Status Validation", "risk": "low", "purpose": "Validate search/extraction and result evidence without changing remote state."},
+    {"name": "Excel-driven Read Check", "risk": "low", "purpose": "Validate column mapping, row execution, retry, and results workbook output."},
+    {"name": "Controlled Destructive Confirmation", "risk": "medium", "purpose": "Use only in a non-production target to validate explicit confirmation and audit behavior."},
+    {"name": "Synthetic Read Transaction", "risk": "low", "purpose": "Validate warm-up, repeated-run metrics, console/network diagnostics, and bounded concurrency."}
+  ]
+}

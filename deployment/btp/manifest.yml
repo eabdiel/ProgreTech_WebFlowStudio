@@ -1,0 +1,19 @@
+applications:
+  - name: alm-webflow-studio-api
+    memory: 2G
+    disk_quota: 4G
+    instances: 1
+    buildpacks:
+      - python_buildpack
+    command: python main.py
+    health-check-type: http
+    health-check-http-endpoint: /api/health
+    env:
+      WEBFLOW_ENV: btp
+      WEBFLOW_HUB_MODE: "1"
+      WEBFLOW_NO_BROWSER: "1"
+      WEBFLOW_AUTH_ADAPTER: sap-approuter
+      WEBFLOW_STORAGE_SYNC_SECONDS: "30"
+      PLAYWRIGHT_BROWSERS_PATH: /home/vcap/app/.playwright
+    services:
+      - alm-webflow-objectstore

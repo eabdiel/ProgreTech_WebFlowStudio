@@ -1,0 +1,9 @@
+{
+  "schema_version": "webflow-worker-settings/1",
+  "adapter": "local-thread-pool",
+  "max_workers": 2,
+  "queue_limit": 100,
+  "retention_days": 14,
+  "poll_seconds": 5,
+  "updated_at": "2026-09-06T03:42:29.974153+00:00"
+}

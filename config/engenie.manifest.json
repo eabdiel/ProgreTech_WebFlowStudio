@@ -1,0 +1,97 @@
+{
+  "schema": "engenie-app-manifest/2",
+  "app_id": "alm-webflow-studio",
+  "name": "ALM WebFlow Studio",
+  "purpose": "Create, replay, execute, schedule, and measure governed browser automations for web applications.",
+  "route": "/",
+  "usage": [
+    "Record a browser workflow",
+    "Replay a workflow as guided training",
+    "Execute or schedule a saved automation",
+    "Run an Excel or CSV driven batch",
+    "Measure synthetic transaction performance",
+    "Inspect execution results and evidence"
+  ],
+  "intents": [
+    {
+      "id": "webflow.list",
+      "examples": [
+        "show my webflows",
+        "what automations are available"
+      ]
+    },
+    {
+      "id": "webflow.explain",
+      "examples": [
+        "what does this flow do",
+        "show the steps in this automation"
+      ]
+    },
+    {
+      "id": "webflow.run",
+      "examples": [
+        "run this webflow",
+        "execute CAB approval validation"
+      ]
+    },
+    {
+      "id": "webflow.status",
+      "examples": [
+        "did the webflow finish",
+        "show the last run status"
+      ]
+    },
+    {
+      "id": "webflow.tutorial",
+      "examples": [
+        "teach me WebFlow Studio",
+        "show me how to record a flow"
+      ]
+    }
+  ],
+  "safe_context_fields": [
+    "flow_id",
+    "flow_name",
+    "status",
+    "run_id",
+    "run_state",
+    "duration_ms",
+    "success_rate",
+    "recorded_steps"
+  ],
+  "restricted_context_fields": [
+    "secret_values",
+    "passwords",
+    "session_tokens",
+    "raw_auth_headers"
+  ],
+  "tutorial_available": true,
+  "tutorial_path": "/api/engenie/tutorial",
+  "callable_contract": {
+    "discover_flows": "GET /api/engenie/flows",
+    "describe_flow": "GET /api/engenie/flows/{flow_id}",
+    "prepare_flow": "POST /api/engenie/prepare",
+    "run_flow": "POST /api/engenie/invoke",
+    "run_status": "GET /api/engenie/jobs/{job_id}",
+    "tutorial": "GET /api/engenie/tutorial"
+  },
+  "tool_contract_path": "/api/engenie/tools",
+  "execution_policy": {
+    "destructive_actions_require_confirmation": true,
+    "collect_missing_parameters_before_run": true,
+    "never_return_secret_values": true,
+    "queue_source": "engenie"
+  },
+  "ai_provider_integration": {
+    "provider_neutral": true,
+    "registry_path": "/api/ai/providers",
+    "message_path": "/api/ai/message",
+    "governance_boundary": "External providers interpret intent; EngenieBridge remains the only governed WebFlow invocation path.",
+    "secret_policy": "Provider credentials and runtime secret values are not exposed through provider status or orchestration responses."
+  },
+  "runtime_boundary": {
+    "hosted_studio": "orchestration, governance, preview, distribution, audit, scheduling",
+    "local_client": "interactive recording and browser execution in the user network context",
+    "prohibited": "generic proxy, VPN, tunnel, remote shell, or firewall bypass"
+  }
+}

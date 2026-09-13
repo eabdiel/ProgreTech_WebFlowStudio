@@ -1,0 +1,14 @@
+{
+  "xsappname": "alm-webflow-studio",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {"name": "$XSAPPNAME.WebFlowViewer", "description": "View WebFlow definitions and results"},
+    {"name": "$XSAPPNAME.WebFlowRunner", "description": "Execute and schedule approved WebFlows"},
+    {"name": "$XSAPPNAME.WebFlowAdmin", "description": "Create, edit, import, and administer WebFlows"}
+  ],
+  "role-templates": [
+    {"name": "WebFlowViewer", "description": "WebFlow read access", "scope-references": ["$XSAPPNAME.WebFlowViewer"]},
+    {"name": "WebFlowRunner", "description": "WebFlow execution access", "scope-references": ["$XSAPPNAME.WebFlowViewer", "$XSAPPNAME.WebFlowRunner"]},
+    {"name": "WebFlowAdmin", "description": "Full WebFlow administration", "scope-references": ["$XSAPPNAME.WebFlowViewer", "$XSAPPNAME.WebFlowRunner", "$XSAPPNAME.WebFlowAdmin"]}
+  ]
+}

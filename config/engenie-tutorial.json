@@ -1,0 +1,14 @@
+{
+  "schema": "engenie-guided-tutorial/1",
+  "app_id": "alm-webflow-studio",
+  "title": "Getting Started with ALM WebFlow Studio",
+  "description": "A short guided walkthrough of the WebFlow lifecycle.",
+  "steps": [
+    {"id": "home", "workspace": "home", "target": "#home", "title": "Automation Library", "instruction": "Start here to open an existing WebFlow or create a new one."},
+    {"id": "record", "workspace": "recorder", "target": "#recorder", "title": "Record", "instruction": "Launch the controlled browser and capture a repeatable web process."},
+    {"id": "objects", "workspace": "objects", "target": "#objects", "title": "Object Repository", "instruction": "Review resilient selectors and classify inputs, outputs, assertions, and secrets."},
+    {"id": "designer", "workspace": "designer", "target": "#designer", "title": "Designer", "instruction": "Add conditions, loops, variables, waits, subflows, or governed Python when needed."},
+    {"id": "run", "workspace": "run", "target": "#run", "title": "Execute", "instruction": "Run immediately, place work on the queue, or schedule it for later."},
+    {"id": "performance", "workspace": "performance", "target": "#performance", "title": "Measure", "instruction": "Use synthetic runs to review timing distributions, failures, console errors, and network issues."}
+  ]
+}
