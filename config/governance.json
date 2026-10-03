@@ -3,7 +3,7 @@
   "enforce_roles": true,
   "enforce_domain_allowlist": false,
   "allowed_domains": [
-    "*.arthrex.com",
+    "*.progretech.com",
     "localhost",
     "127.0.0.1"
   ],

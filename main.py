@@ -526,7 +526,7 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
         self.send_header("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
         # The SAP Application Router remains the cloud authentication trust boundary.
-        frame_ancestors=os.getenv("WEBFLOW_FRAME_ANCESTORS", "'self' https://*.arthrex.com")
+        frame_ancestors=os.getenv("WEBFLOW_FRAME_ANCESTORS", "'self' https://*.progretech.com")
         self.send_header("Content-Security-Policy", f"default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors {frame_ancestors}")
         super().end_headers()
     def log_message(self, fmt, *args): print("[WebFlow]", fmt % args)

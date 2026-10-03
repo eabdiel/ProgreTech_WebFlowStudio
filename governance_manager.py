@@ -38,7 +38,7 @@ DEFAULT_GOVERNANCE = {
     "schema_version": "webflow-governance/1",
     "enforce_roles": True,
     "enforce_domain_allowlist": False,
-    "allowed_domains": ["*.arthrex.com", "localhost", "127.0.0.1"],
+    "allowed_domains": ["*.progretech.com", "localhost", "127.0.0.1"],
     "require_destructive_confirmation": True,
     "destructive_keywords": ["approve", "submit", "sign", "delete", "remove", "post", "publish", "release", "create user", "provision"],
     "block_destructive_performance_tests": True,
@@ -136,7 +136,7 @@ class GovernanceManager:
         pattern = (pattern or "").lower().strip().rstrip(".")
         if not host or not pattern:
             return False
-        # fnmatch handles *.arthrex.com while exact host names remain exact.
+        # fnmatch handles *.progretech.com while exact host names remain exact.
         return fnmatch.fnmatch(host, pattern)
 
     def validate_url(self, url: str) -> tuple[bool, dict | None]:
