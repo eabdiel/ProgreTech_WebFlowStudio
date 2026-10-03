@@ -1,6 +1,12 @@
-# ALM WebFlow Studio — Google Cloud Run baseline
+# ProgreTech WebFlow Studio — browser automation with Playwright
 
-Standalone - 
+Browser automation studio with Playwright: record workflows, edit and run flows, capture screenshots, and use an optional local client.
+
+A project of **[ProgreTech LLC](https://progretech.com)**, owned and maintained by **Ed Rodriguez**. Third-party components and contributions retain their respective ownership and notices.
+
+[Project website](https://progretech.com) · [Report an issue](https://github.com/eabdiel/ProgreTech_WebFlowStudio/issues) · [Contribute](CONTRIBUTING.md)
+
+Standalone browser workflow authoring and execution studio, from the ALM WebFlow Studio family.
 
 ## Included
 - Latest Hybrid Runtime v5 authoring/execution UI and fixes.
@@ -31,3 +37,17 @@ The supplied deployment uses 2 CPU, 2 GiB RAM, concurrency 4, and max instances 
 
 ## Evidence retention
 Recording screenshots default to 24 hours and may be explicitly saved for 3/7/14/30 days. Execution screenshots remain 24 hours. Reporting metadata remains persistent. Use **Download Local Copy** for indefinite recording retention.
+
+## Collaboration
+
+Reproducible bug reports, platform compatibility, installation documentation, and small regression fixes are useful ways to help. Read [CONTRIBUTING.md](CONTRIBUTING.md) for issue reports, proposed changes, and attribution requirements.
+
+## License and reuse
+
+This repository uses custom ProgreTech source-available terms; see [license.md](license.md). Read the permitted uses, attribution, and contribution terms before reusing or submitting code. Public visibility is not an OSI-approved open-source license.
+
+## More from ProgreTech
+
+Explore [CodeSeal](https://codeseal.progretech.com) for signed software provenance and project history.
+
+Discover the wider portfolio at [progretech.com](https://progretech.com). These links identify related products; they do not imply a bundled integration or shared license.
